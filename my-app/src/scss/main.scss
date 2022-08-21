@@ -1,0 +1,7 @@
+@import './settings/fonts.scss';
+@import './settings/colors.scss';
+
+body {
+    background-color: $brandColor;
+    font-family: $primaryFont;
+}
