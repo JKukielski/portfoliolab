@@ -1,7 +1,12 @@
 @import './settings/fonts.scss';
 @import './settings/colors.scss';
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: $brandColor;
     font-family: $primaryFont;
 }
