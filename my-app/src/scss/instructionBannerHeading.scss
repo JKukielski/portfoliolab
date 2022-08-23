@@ -1,0 +1,21 @@
+@import '../scss/settings/colors';
+@import '../scss/settings/fonts';
+
+.app__instruction-heading {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.app__instruction-heading_text {
+    font-size: 28px;
+    font-family: $primaryFont;
+    color: $textColor;
+    margin-top: 50px;
+}
+
+.app__instruction-heading_image {
+    margin: 30px;
+}
