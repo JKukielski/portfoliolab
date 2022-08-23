@@ -4,6 +4,7 @@ import Hero from "./Hero";
 import ThreeColumnBanner from "./ThreeColumnBanner";
 import InstructionBannerHeading from "./InstructionBannerHeading";
 import InstructionBanner from "./InstructionBanner";
+import CTA from "./CTA";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <ThreeColumnBanner />
       <InstructionBannerHeading />
       <InstructionBanner />
+      <CTA />
     </>
   );
 };
