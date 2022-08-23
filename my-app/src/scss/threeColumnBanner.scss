@@ -1,0 +1,43 @@
+@import './settings/fonts';
+@import './settings/colors';
+
+.app__banner {
+    width: 100%;
+    background-image: url(../assets/background.png);
+    display: flex;
+}
+
+.app__banner-container {
+    width: 100%;
+    height: 100%;
+    padding: 3rem 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.app__banner-column {
+    width: 30%;
+    flex-direction: column;
+    text-align: center;
+    font-family: $primaryFont;
+
+    .app__banner-column_number {
+        font-size: 90px;
+        font-weight: 300;
+        color: $dataColor;
+    }
+
+    .app__banner-column_heading {
+        font-size: 18px;
+        font-weight: 300;
+        color: $textColor;
+        margin: 20px 0;
+    }
+
+    .app__banner-column_content {
+        font-size: 16px;
+        font-weight: 300;
+    }
+}
