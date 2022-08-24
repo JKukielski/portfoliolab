@@ -6,6 +6,7 @@ import InstructionBannerHeading from "./InstructionBannerHeading";
 import InstructionBanner from "./InstructionBanner";
 import CTA from "./CTA";
 import AboutUs from "./AboutUs";
+import PaginationHeading from "./PaginationHeading";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <InstructionBanner />
       <CTA />
       <AboutUs />
+      <PaginationHeading />
     </>
   );
 };
