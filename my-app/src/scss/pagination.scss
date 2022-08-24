@@ -1,0 +1,39 @@
+@import '../scss/settings/colors';
+@import '../scss/settings/fonts';
+
+.app__pagination {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.app__pagination-buttons {
+    width: 50%;
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 55px;
+
+    .app__pagination-btn {
+        border: none;
+        background-color: transparent;
+        font-family: $primaryFont;
+        color: $textColor;
+        font-size: 18px;
+        font-weight: 400;
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+
+        &:hover, &:focus {
+            border: 1px solid $fadeColor;
+        }
+    }
+}
+
+.app__pagination-description { 
+    width: 30%; 
+    text-align: center;
+}

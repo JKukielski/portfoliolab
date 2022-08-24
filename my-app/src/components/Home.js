@@ -7,6 +7,7 @@ import InstructionBanner from "./InstructionBanner";
 import CTA from "./CTA";
 import AboutUs from "./AboutUs";
 import PaginationHeading from "./PaginationHeading";
+import Pagination from "./Pagination";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <CTA />
       <AboutUs />
       <PaginationHeading />
+      <Pagination />
     </>
   );
 };
