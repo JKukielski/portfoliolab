@@ -23,10 +23,11 @@
         color: $textColor;
         font-size: 18px;
         font-weight: 400;
-        padding: 20px;
-        width: 300px;
+        width: 270px;
+        height: 80px;
         text-align: center;
-
+        cursor: pointer;
+        
         &:hover, &:focus {
             border: 1px solid $fadeColor;
         }
