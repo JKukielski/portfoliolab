@@ -48,13 +48,16 @@ const Pagination = () => {
           .slice(perPage * currentPage - perPage, perPage * currentPage)
           .map((element, index) => {
             return (
-              <li key={index}>
-                <h1 className="app__pagination-list_element-heading">
-                  {element.name}
-                </h1>
-                <p className="app__pagination-list_element-description">
-                  {element.description}
-                </p>
+              <li key={index} className="app__pagination-list_element">
+                <div className="app__pagination-list_element-main">
+                  <h1 className="app__pagination-list_element-heading">
+                    {element.name}
+                  </h1>
+                  <p className="app__pagination-list_element-description">
+                    {element.description}
+                  </p>
+                </div>
+
                 <p className="app__pagination-list_element-info">
                   {element.info}
                 </p>
