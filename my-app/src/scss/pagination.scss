@@ -81,6 +81,10 @@
     border-bottom: 1px solid $fadeColor;
 }
 
+.app__pagination-numbers {
+    margin-bottom: 50px;
+}
+
 .app__pagination-numbers_btn {
         background-color: transparent;
         border: none;
@@ -90,7 +94,7 @@
         height: 40px;
         color: $textColor;
         font-family: $primaryFont;
-        
+
         &:hover, &:focus {
             border: 1px solid $fadeColor;
         }

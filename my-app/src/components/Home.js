@@ -8,6 +8,7 @@ import CTA from "./CTA";
 import AboutUs from "./AboutUs";
 import PaginationHeading from "./PaginationHeading";
 import Pagination from "./Pagination";
+import ContactForm from "./ContactForm";
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
       <AboutUs />
       <PaginationHeading />
       <Pagination />
+      <ContactForm />
     </>
   );
 };

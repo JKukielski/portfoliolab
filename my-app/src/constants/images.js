@@ -7,6 +7,9 @@ import Icon3 from "../assets/Icon-3.svg";
 import Icon4 from "../assets/Icon-4.svg";
 import AboutUs from "../assets/People.jpg";
 import Signature from "../assets/Signature.svg";
+import Clothes from "../assets/Background-Contact-Form.jpg";
+import Facebook from "../assets/Facebook.svg";
+import Instagram from "../assets/Instagram.svg";
 
 export default {
   HeroImage,
@@ -18,4 +21,7 @@ export default {
   Icon4,
   AboutUs,
   Signature,
+  Clothes,
+  Facebook,
+  Instagram,
 };
