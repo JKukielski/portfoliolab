@@ -16,12 +16,14 @@
     display: flex;
     justify-content: flex-end;
     margin-bottom: 20px;
-    color: $fadeColor;
+    
 
-    p {
+    a {
         padding: 8px 13px;
         font-size: 14px;
         margin-left: 30px;
+        text-decoration: none;
+        color: $fadeColor;
 
         &:hover {
             border: 2px solid $brandColor;

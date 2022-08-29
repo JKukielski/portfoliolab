@@ -5,7 +5,7 @@ import "../scss/contactForm.scss";
 
 const ContactForm = () => {
   return (
-    <div className="app__contact">
+    <div className="app__contact" id="contact" activeClassName="contact">
       <div className="app__contact-overlay"></div>
       <div className="app__contact-container">
         <div className="app__contact-container_align">

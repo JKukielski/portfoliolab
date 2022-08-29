@@ -4,7 +4,7 @@ import "../scss/paginationHeading.scss";
 
 const PaginationHeading = () => {
   return (
-    <div className="app__pagination-heading">
+    <div className="app__pagination-heading" id="organizations">
       <h1 className="app__pagination-heading_text">Komu pomagamy?</h1>
       <div className="app__pagination-heading_image">
         <img src={images.Decoration} alt="decoration" />
