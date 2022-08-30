@@ -71,6 +71,7 @@ const Pagination = () => {
           .map((element, index) => {
             return (
               <button
+                key={index}
                 className="app__pagination-numbers_btn"
                 onClick={() => setCurrentPage(index + 1)}
               >

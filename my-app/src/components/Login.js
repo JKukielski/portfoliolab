@@ -1,10 +1,37 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import Navbar from "./Navbar";
 import "../scss/login.scss";
 import images from "../constants/images.js";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext.js";
 
 const Login = () => {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    if (emailRef.current.value === "" || passwordRef.current.value === "") {
+      setError("Wprowadź adres mailowy oraz hasło");
+    }
+
+    try {
+      setError("");
+      setLoading(true);
+      await login(emailRef.current.value, passwordRef.current.value);
+      navigate("/oddaj-rzeczy");
+    } catch {
+      setError("Logowanie nie powiodło się");
+    }
+
+    setLoading(false);
+  }
+
   return (
     <div className="app__login">
       <Navbar />
@@ -15,20 +42,28 @@ const Login = () => {
           alt="decoration"
           className="app__login-decoration"
         />
-        <div className="app__login-details">
-          <div className="app__login-details_element">
-            <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email" />
+        <form onSubmit={handleSubmit}>
+          <div className="app__login-details">
+            <div className="app__login-details_element">
+              <label htmlFor="email">Email</label>
+              <input type="email" name="email" id="email" ref={emailRef} />
+            </div>
+            <div className="app__login-details_element">
+              <label htmlFor="password">Hasło</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                ref={passwordRef}
+              />
+            </div>
+            <p className="app__register-error">{error}</p>
           </div>
-          <div className="app__login-details_element">
-            <label htmlFor="password">Hasło</label>
-            <input type="password" name="password" id="password" />
+          <div className="app__login-options">
+            <Link to="/rejestracja">Załóż konto</Link>
+            <button type="submit">Zaloguj się</button>
           </div>
-        </div>
-        <div className="app__login-options">
-          <Link to="/">Załóż konto</Link>
-          <Link to="/logowanie">Zaloguj się</Link>
-        </div>
+        </form>
       </div>
     </div>
   );
