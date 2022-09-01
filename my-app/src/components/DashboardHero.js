@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import images from "../constants/images.js";
 import "../scss/dashboardHero.scss";
 
-export default function DashboardHero() {
+const DashboardHero = () => {
   return (
     <>
       <Navbar />
@@ -65,4 +65,5 @@ export default function DashboardHero() {
       </div>
     </>
   );
-}
+};
+export default DashboardHero;

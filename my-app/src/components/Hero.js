@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import "../scss/hero.scss";
 import images from "../constants/images.js";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -21,7 +22,9 @@ const Hero = () => {
             alt="decoration"
           />
           <div className="app__hero-content_buttons">
-            <button className="app__hero-content_btn">ODDAJ RZECZY</button>
+            <Link to="/oddaj-rzeczy" className="app__hero-content_btn">
+              ODDAJ RZECZY
+            </Link>
             <button className="app__hero-content_btn">
               ZORGANIZUJ <br /> ZBIÓRKĘ
             </button>

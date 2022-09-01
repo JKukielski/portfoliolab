@@ -1,0 +1,18 @@
+@import '../scss/settings/colors';
+@import '../scss/settings/fonts';
+
+.app__dashboardInformation {
+    width: 100%;
+    height: 100px;
+    background-color: $brandColor;
+    padding: 1rem 7rem;
+    font-family: $primaryFont;
+
+    .app__dashboardInformation-heading {
+        font-size: 36px;
+    }
+
+    .app__dashboardInformation-text {
+        font-size: 18px;
+    }
+}

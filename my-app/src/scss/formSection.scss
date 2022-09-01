@@ -1,0 +1,10 @@
+@import './settings/colors';
+@import './settings/fonts';
+
+
+.app__form-section {
+    height: 600px;
+    width: 100%;
+    background-image: url('../assets/Background-Form.jpg');
+    background-size: cover;
+}

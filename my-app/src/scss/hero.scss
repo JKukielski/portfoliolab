@@ -44,6 +44,22 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
+    a {
+        width: 170px; 
+        height: 80px;
+        border: 2px solid $fadeColor;
+        background-color: transparent;
+        font-size: 20px;
+        font-family: $primaryFont;
+        font-weight: 300;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        text-decoration: none;
+        color: $textColor;
+    }
 }
 
 .app__hero-content_btn {
