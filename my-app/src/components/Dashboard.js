@@ -1,5 +1,12 @@
 import React from "react";
+import DashboardHero from "./DashboardHero";
 
-export default function Dashboard() {
-  return <div>Hello world</div>;
+function Dashboard() {
+  return (
+    <>
+      <DashboardHero />
+    </>
+  );
 }
+
+export default Dashboard;

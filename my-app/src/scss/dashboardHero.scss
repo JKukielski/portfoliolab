@@ -1,0 +1,93 @@
+@import '../scss/settings/colors';
+@import '../scss/settings/fonts';
+
+.app__dashboard-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: calc(100vh - 120px);
+    padding-right: 7rem;
+}
+
+.app__dashboard-hero_image {
+    width: 58%;
+    position: absolute;
+    bottom: 0%;
+    right: 50%;
+    z-index: -1;
+}
+
+.app__dashboard-hero_content {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: $textColor;
+
+    .app__dashboard-hero_content-heading {
+        font-family: $primaryFont;
+        font-weight: 400;
+        font-size: 32px;
+    }
+
+    .app__dashboard-hero_content-subheading {
+        margin-bottom: 40px;
+        font-size: 36px;
+        font-family: $primaryFont;
+        font-weight: 300;
+    }
+}
+
+.app__dashboard-hero_decoration {
+    margin: 20px 0;
+}
+
+
+.app__dashboard-content_steps-container {
+    display: flex;
+    margin-top: 40px 0;
+    
+
+    .app__dashboard-hero_step {
+        border: 1px solid $textColor;
+        width: 150px;
+        height: 150px;
+        transform: rotate(45deg);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin: 30px 10px 0 10px;
+
+        .app__dashboard-hero_step-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 150px;
+            height: 150px;
+            transform: rotate(-45deg);
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            color: $textColor;
+
+            .app__dashboard-hero_step-heading {
+                margin-bottom: 25px;
+                font-family: $primaryFont;
+                font-size: 30px;
+                font-weight: 300;
+            }
+
+            .app__dashboard-hero_step-info {
+                font-family: $primaryFont;
+                font-size: 18px;
+                font-weight: 300;
+            }
+        }
+    }
+}
