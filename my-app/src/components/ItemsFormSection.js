@@ -6,9 +6,9 @@ function ItemsFormSection() {
       <form className="app__formItems-form">
         <div className="app__formItems-checkbox_container">
           <input
-            type="checkbox"
+            type="radio"
             id="reusable-clothes"
-            name="reusable-clothes"
+            name="items"
             value="reusable-clothes"
           />
           <label htmlFor="reusable-clothes">
@@ -16,19 +16,19 @@ function ItemsFormSection() {
           </label>
         </div>
         <div className="app__formItems-checkbox_container">
-          <input type="checkbox" id="trash" name="trash" value="trash" />
+          <input type="radio" id="trash" name="items" value="trash" />
           <label htmlFor="trash">ubrania, do wyrzucenia</label>
         </div>
         <div className="app__formItems-checkbox_container">
-          <input type="checkbox" id="toys" name="toys" value="toys" />
+          <input type="radio" id="toys" name="items" value="toys" />
           <label htmlFor="toys">Zabawki</label>
         </div>
         <div className="app__formItems-checkbox_container">
-          <input type="checkbox" id="books" name="books" value="books" />
+          <input type="radio" id="books" name="items" value="books" />
           <label htmlFor="books">Książki</label>
         </div>
         <div className="app__formItems-checkbox_container">
-          <input type="checkbox" id="other" name="other" value="other" />
+          <input type="radio" id="other" name="items" value="other" />
           <label htmlFor="other">Inne</label>
         </div>
       </form>
