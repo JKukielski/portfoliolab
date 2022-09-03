@@ -39,7 +39,7 @@ function FormSection() {
   };
 
   return (
-    <>
+    <div className="app_">
       {step <= 3 && (
         <div className="app__dashboardInformation">
           <h1 className="app__dashboardInformation-heading">Ważne!</h1>
@@ -82,7 +82,7 @@ function FormSection() {
                 </button>
               )}
               {step === 4 && (
-                <button onClick={() => {}} className="app__form-btn">
+                <button onClick={() => {}} className="btn-confirm">
                   Potwierdzam
                 </button>
               )}
@@ -90,7 +90,7 @@ function FormSection() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

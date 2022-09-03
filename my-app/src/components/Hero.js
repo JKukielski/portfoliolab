@@ -22,12 +22,12 @@ const Hero = () => {
             alt="decoration"
           />
           <div className="app__hero-content_buttons">
-            <Link to="/oddaj-rzeczy" className="app__hero-content_btn">
+            <Link to="/logowanie" className="app__hero-content_btn">
               ODDAJ RZECZY
             </Link>
-            <button className="app__hero-content_btn">
+            <Link to="/logowanie" className="app__hero-content_btn">
               ZORGANIZUJ <br /> ZBIÓRKĘ
-            </button>
+            </Link>
           </div>
         </div>
       </div>
