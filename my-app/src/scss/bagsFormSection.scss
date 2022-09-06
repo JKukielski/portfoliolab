@@ -1,0 +1,18 @@
+@import './settings/colors';
+@import './settings/fonts';
+
+.app__formBags-form {
+    position: relative;
+    font-family: $primaryFont;
+
+    select {
+        appearance: none;
+        background-color: transparent;
+        border: 1px solid $fadeColor;
+        width: 200px;
+        padding: 0 1em;
+        margin-left: 20px;
+    }
+}
+
+

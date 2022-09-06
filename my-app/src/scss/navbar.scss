@@ -1,4 +1,5 @@
 @import './settings/colors';
+@import './settings/fonts';
 
 .app__navbar {
     width: 100%;
@@ -11,10 +12,11 @@
     padding: 3rem 7rem;
 }
 
-.app__navbar-user {
+.app__navbar-options {
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     margin-bottom: 20px;
     
 
@@ -30,6 +32,26 @@
         }
     }
 
+}
+
+.app__navbar-welcome {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.app__navbar-logout_btn {
+    padding: 8px 13px;
+    font-size: 14px;
+    margin-left: 30px;
+    text-decoration: none;
+    color: $fadeColor;
+    background-color: transparent;
+    border-style: none;
+    font-family: $primaryFont;
+
+    &:hover {
+        border: 2px solid $brandColor;
+    }
 }
 
 .app__navbar-menu {

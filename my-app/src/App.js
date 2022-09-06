@@ -6,6 +6,7 @@ import Register from "./components/Register";
 import LogoutSuccess from "./components/LogoutSuccess";
 import { AuthProvider } from "./contexts/AuthContext";
 import Dashboard from "./components/Dashboard";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (

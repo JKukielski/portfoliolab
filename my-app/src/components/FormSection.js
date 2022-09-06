@@ -41,7 +41,7 @@ function FormSection() {
   return (
     <div className="app_">
       {step <= 3 && (
-        <div className="app__dashboardInformation">
+        <div className="app__dashboardInformation" id="oddaj-rzeczy">
           <h1 className="app__dashboardInformation-heading">Ważne!</h1>
           <p className="app__dashboardInformation-text">
             {InformationSubheading[step]}

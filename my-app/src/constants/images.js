@@ -11,6 +11,7 @@ import Clothes from "../assets/Background-Contact-Form.jpg";
 import Facebook from "../assets/Facebook.svg";
 import Instagram from "../assets/Instagram.svg";
 import Sweater from "../assets/Form-Hero-Image.jpg";
+import ArrowDown from "../assets/Icon-Arrow-Down.svg";
 
 export default {
   HeroImage,
@@ -26,4 +27,5 @@ export default {
   Facebook,
   Instagram,
   Sweater,
+  ArrowDown,
 };
