@@ -9,6 +9,8 @@ const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const [error, setError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [emailError, setEmailError] = useState("");
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -16,10 +18,13 @@ const Login = () => {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    if (emailRef.current.value === "" || passwordRef.current.value === "") {
-      setError("Wprowadź adres mailowy oraz hasło");
-    }
+    // if (emailRef.current.value === "" || passwordRef.current.value === "") {
+    //   setError("Wprowadź adres mailowy oraz hasło");
+    // }
 
+    if (passwordError.current.value.length < 6) {
+      setPasswordError("Podane hasło jest za krótkie");
+    }
     try {
       setError("");
       setLoading(true);

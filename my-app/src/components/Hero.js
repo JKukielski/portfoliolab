@@ -2,9 +2,20 @@ import React from "react";
 import Navbar from "./Navbar";
 import "../scss/hero.scss";
 import images from "../constants/images.js";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
 const Hero = () => {
+  const { currentUser } = useAuth();
+  const navigate = useNavigate();
+
+  function handleRedirect() {
+    if (currentUser) {
+      navigate("/oddaj-rzeczy");
+    } else {
+      navigate("/logowanie");
+    }
+  }
   return (
     <>
       <Navbar />
@@ -22,12 +33,12 @@ const Hero = () => {
             alt="decoration"
           />
           <div className="app__hero-content_buttons">
-            <Link to="/logowanie" className="app__hero-content_btn">
+            <button onClick={handleRedirect} className="app__hero-content_btn">
               ODDAJ RZECZY
-            </Link>
-            <Link to="/logowanie" className="app__hero-content_btn">
+            </button>
+            <button onClick={handleRedirect} className="app__hero-content_btn">
               ZORGANIZUJ <br /> ZBIÓRKĘ
-            </Link>
+            </button>
           </div>
         </div>
       </div>
