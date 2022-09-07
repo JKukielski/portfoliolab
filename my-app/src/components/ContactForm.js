@@ -4,13 +4,51 @@ import Footer from "./Footer.js";
 import "../scss/contactForm.scss";
 
 const ContactForm = () => {
-  const nameRef = useRef();
-  const emailRef = useRef();
-  const messageRef = useRef();
-
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [messageError, setMessageError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const data = { name, email, message };
+
+    if (name.length === 0) {
+      setNameError("Wprowadź swoje imię!");
+    } else {
+      setNameError("");
+    }
+
+    if (email.length === 0) {
+      setEmailError("Wprowadź swój adres mailowy!");
+    } else {
+      setEmailError("");
+    }
+
+    if (message.length < 120) {
+      setMessageError("Wiadomość musi mieć conajmniej 120 znaków!");
+    } else {
+      setMessageError("");
+    }
+
+    fetch("https://fer-api.coderslab.pl/v1/portfolio/contact", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => {
+      if (res.ok) {
+        setSuccess("Wiadomość została wysłana! Wkrótce się skontaktujemy.");
+        setName("");
+        setEmail("");
+        setMessage("");
+      }
+    });
+  }
 
   return (
     <div className="app__contact" id="contact" activeClassName="contact">
@@ -21,7 +59,9 @@ const ContactForm = () => {
             <h1 className="app__contact-heading_text">Skontaktuj się z nami</h1>
             <img src={images.Decoration} alt="decoration" />
           </div>
-          <form className="app__contact-form" onSubmit={() => {}} action="">
+          <p className="app__contact-success">{success}</p>
+
+          <form className="app__contact-form" onSubmit={handleSubmit}>
             <div className="app__contact-form_details">
               <div className="app__contact-form_element">
                 <label htmlFor="name">Wpisz swoje imię</label>
@@ -29,8 +69,13 @@ const ContactForm = () => {
                   type="text"
                   placeholder="Krzysztof"
                   id="name"
-                  ref={nameRef}
+                  value={name}
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
+                  style={{ borderBottom: nameError && "1px solid red" }}
                 />
+                <p className="app__contact-error">{nameError}</p>
               </div>
               <div className="app__contact-form_element">
                 <label htmlFor="">Wpisz swój email</label>
@@ -38,8 +83,13 @@ const ContactForm = () => {
                   type="email"
                   placeholder="abc@xyz.pl"
                   id="email"
-                  ref={emailRef}
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                  style={{ borderBottom: emailError && "1px solid red" }}
                 />
+                <p className="app__contact-error">{emailError}</p>
               </div>
             </div>
             <div className="app__contact-form_message">
@@ -53,8 +103,13 @@ const ContactForm = () => {
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat."
-                ref={messageRef}
+                value={message}
+                onChange={(e) => {
+                  setMessage(e.target.value);
+                }}
+                style={{ borderBottom: messageError && "1px solid red" }}
               ></textarea>
+              <p className="app__contact-error">{emailError}</p>
             </div>
             <div className="app__contact-form_button-container">
               <button type="submit" className="app__contact-form_btn">

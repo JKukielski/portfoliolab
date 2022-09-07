@@ -22,6 +22,22 @@
     }
 }
 
+.app__contact-success {
+    margin-bottom: 30px;
+    width: 50%;
+    text-align: center;
+    font-family: $primaryFont;
+    color: rgb(44, 173, 44);
+    font-weight: 600;
+}
+
+.app__contact-error {
+    font-family: $primaryFont;
+    color: red;
+    font-weight: 600;
+    font-size: 10px;
+}
+
 .app__contact-container {
     width: 100%;
     display: flex;
@@ -46,7 +62,7 @@
         }
 
         img {
-            margin: 20px 0 60px 0;
+            margin: 20px 0 30px 0;
         }
     }
 
@@ -97,6 +113,7 @@
         border-bottom: 1px solid $textColor;
         padding-bottom: 7px;
         font-family: $primaryFont;
+        margin-bottom: 7px;
     }
 
     input::placeholder {
@@ -130,6 +147,8 @@
         font-family: $primaryFont;
         resize: none;
         outline: none;
+        margin-bottom: 7px;
+
     }
 
     textarea::placeholder {
