@@ -18,20 +18,25 @@ const Login = () => {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    // if (emailRef.current.value === "" || passwordRef.current.value === "") {
-    //   setError("Wprowadź adres mailowy oraz hasło");
-    // }
-
-    if (passwordError.current.value.length < 6) {
-      setPasswordError("Podane hasło jest za krótkie");
+    if (emailRef.current.value.length === 0) {
+      setEmailError("Wprowadź adres mailowy");
+    } else {
+      setEmailError("");
     }
+
+    if (passwordRef.current.value.length === 0) {
+      setPasswordError("Wprowadź hasło");
+    } else {
+      setPasswordError("");
+    }
+
     try {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
       navigate("/oddaj-rzeczy");
     } catch {
-      setError("Logowanie nie powiodło się");
+      setError("Niepoprawny email lub hasło");
     }
 
     setLoading(false);
@@ -51,7 +56,14 @@ const Login = () => {
           <div className="app__login-details">
             <div className="app__login-details_element">
               <label htmlFor="email">Email</label>
-              <input type="email" name="email" id="email" ref={emailRef} />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                ref={emailRef}
+                style={{ borderBottom: emailError && "1px solid red" }}
+              />
+              <p className="app__login-error">{emailError}</p>
             </div>
             <div className="app__login-details_element">
               <label htmlFor="password">Hasło</label>
@@ -60,9 +72,11 @@ const Login = () => {
                 name="password"
                 id="password"
                 ref={passwordRef}
+                style={{ borderBottom: passwordError && "1px solid red" }}
               />
+              <p className="app__login-error">{passwordError}</p>
             </div>
-            <p className="app__register-error">{error}</p>
+            <p className="app__login-error">{error}</p>
           </div>
           <div className="app__login-options">
             <Link to="/rejestracja">Załóż konto</Link>

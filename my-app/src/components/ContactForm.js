@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import images from "../constants/images.js";
 import Footer from "./Footer.js";
 import "../scss/contactForm.scss";
 
 const ContactForm = () => {
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const messageRef = useRef();
+
+  const [nameError, setNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [messageError, setMessageError] = useState("");
+
   return (
     <div className="app__contact" id="contact" activeClassName="contact">
       <div className="app__contact-overlay"></div>
@@ -17,11 +25,21 @@ const ContactForm = () => {
             <div className="app__contact-form_details">
               <div className="app__contact-form_element">
                 <label htmlFor="name">Wpisz swoje imię</label>
-                <input type="text" placeholder="Krzysztof" id="name" />
+                <input
+                  type="text"
+                  placeholder="Krzysztof"
+                  id="name"
+                  ref={nameRef}
+                />
               </div>
               <div className="app__contact-form_element">
                 <label htmlFor="">Wpisz swój email</label>
-                <input type="email" placeholder="abc@xyz.pl" id="email" />
+                <input
+                  type="email"
+                  placeholder="abc@xyz.pl"
+                  id="email"
+                  ref={emailRef}
+                />
               </div>
             </div>
             <div className="app__contact-form_message">
@@ -35,6 +53,7 @@ const ContactForm = () => {
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat."
+                ref={messageRef}
               ></textarea>
             </div>
             <div className="app__contact-form_button-container">

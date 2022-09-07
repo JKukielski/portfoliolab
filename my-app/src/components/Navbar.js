@@ -20,14 +20,10 @@ const Navbar = () => {
 
   return (
     <div className="app__navbar">
-      {/* <div className="app__navbar-options">
-        <Link to="/logowanie">Zaloguj się</Link>
-        <Link to="/rejestracja">Załóż konto</Link>
-      </div> */}
       {currentUser ? (
         <div className="app__navbar-options">
           <p className="app__navbar_welcome">Cześć {currentUser.email}</p>
-          <a href="#oddaj-rzeczy">Oddaj rzeczy</a>
+          <a href="/oddaj-rzeczy#oddaj-rzeczy">Oddaj rzeczy</a>
           <button className="app__navbar-logout_btn" onClick={handleLogout}>
             Wyloguj
           </button>

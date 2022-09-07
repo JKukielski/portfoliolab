@@ -67,7 +67,13 @@ const Register = () => {
           <div className="app__register-details">
             <div className="app__register-details_element">
               <label htmlFor="email">Email</label>
-              <input type="email" name="email" id="email" ref={emailRef} />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                ref={emailRef}
+                style={{ borderBottom: emailError && "1px solid red" }}
+              />
               <p className="app__register-error">{emailError}</p>
             </div>
             <div className="app__register-details_element">
@@ -77,6 +83,7 @@ const Register = () => {
                 name="password"
                 id="password"
                 ref={passwordRef}
+                style={{ borderBottom: passwordError && "1px solid red" }}
               />
               <p className="app__register-error">{passwordError}</p>
             </div>
@@ -87,6 +94,9 @@ const Register = () => {
                 name="passwordConfirm"
                 id="passwordConfirm"
                 ref={passwordConfirmRef}
+                style={{
+                  borderBottom: passwordConfirmError && "1px solid red",
+                }}
               />
               <p className="app__register-error">{passwordConfirmError}</p>
             </div>

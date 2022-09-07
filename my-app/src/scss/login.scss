@@ -23,7 +23,7 @@
 
 .app__login-details {
     width: 380px;
-    height: 230px;
+    height: 250px;
     background-color: $primaryColor;
     display: flex;
     justify-content: center;
@@ -88,3 +88,10 @@
 }
 
 
+.app__login-error {
+    color: red;
+    font-family: $primaryFont;
+    font-size: 12px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
