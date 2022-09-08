@@ -1,70 +1,95 @@
 import React from "react";
+import images from "../constants/images.js";
+import "../scss/locationFormSelection.scss";
 
-function LocationFormSection() {
+function LocationFormSection({
+  handleLocationChange,
+  handlePeopleChange,
+  handleOrganizationChange,
+  organization,
+}) {
   return (
     <div className="app__formLocation">
       <form className="app__formLocation-form">
         <div className="app__formLocation-form_select-container">
-          <select name="" id="">
+          <select name="" id="" onChange={handleLocationChange}>
+            <option value="0">— wybierz —</option>
             <option value="Warszawa">Warszawa</option>
             <option value="Poznań">Poznań</option>
             <option value="Kraków">Kraków</option>
             <option value="Wrocław">Wrocław</option>
             <option value="Katowice">Katowice</option>
           </select>
+          <img src={images.ArrowDown} alt="arrowdown" />
         </div>
         <h2 className="app__formLocation-subheading">Komu chcesz pomóc?</h2>
         <div className="app__formLocation-form_checkbox_container">
-          <div className="app__formLocation-form_checkbox-element">
+          <label className="app__formLocation-checkbox_container">
+            dzieciom
             <input
               type="checkbox"
+              checked="checked"
               name="kids"
               id="kids"
-              className="app__formLocation-checkbox"
+              value="dzieciom"
+              onChange={handlePeopleChange}
             />
-            <label htmlFor="kids">dzieciom</label>
-          </div>
-          <div className="app__formLocation-form_checkbox-element">
+            <span className="checkmark"></span>
+          </label>
+          <label className="app__formLocation-checkbox_container">
+            samotnym matkom
             <input
               type="checkbox"
               name="mothers"
               id="mothers"
-              className="app__formLocation-checkbox"
+              value="samotnym matkom"
+              onChange={handlePeopleChange}
             />
-            <label htmlFor="mothers">samotnym matkom</label>
-          </div>
-          <div className="app__formLocation-form_checkbox-element">
+            <span className="checkmark"></span>
+          </label>
+          <label className="app__formLocation-checkbox_container">
+            bezdomnym
             <input
               type="checkbox"
               name="homeless"
               id="homeless"
-              className="app__formLocation-checkbox"
+              value="bezdomnym"
+              onChange={handlePeopleChange}
             />
-            <label htmlFor="homeless">bezdomnym</label>
-          </div>
-          <div className="app__formLocation-form_checkbox-element">
+            <span className="checkmark"></span>
+          </label>
+          <label className="app__formLocation-checkbox_container">
+            niepełnosprawnym
             <input
               type="checkbox"
               name="disabled"
               id="disabled"
-              className="app__formLocation-checkbox"
+              value="niepełnosprawnym"
+              onChange={handlePeopleChange}
             />
-            <label htmlFor="disabled">niepełnosprawnym</label>
-          </div>
-          <div className="app__formLocation-form_checkbox-element">
+            <span className="checkmark"></span>
+          </label>
+          <label className="app__formLocation-checkbox_container">
+            osobom starszym
             <input
               type="checkbox"
+              checked="checked"
               name="elderly"
               id="elderly"
-              className="app__formLocation-checkbox"
+              value="osobom starszym"
+              onChange={handlePeopleChange}
             />
-            <label htmlFor="elderly">osobom starszym</label>
-          </div>
+            <span className="checkmark"></span>
+          </label>
         </div>
         <h2 className="app__formLocation-subheading">
           Wpisz nazwę konkretnej organizacji (opcjonalne)
         </h2>
-        <input type="text" />
+        <input
+          type="text"
+          value={organization}
+          onChange={handleOrganizationChange}
+        />
       </form>
     </div>
   );

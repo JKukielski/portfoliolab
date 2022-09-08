@@ -6,13 +6,36 @@
     font-family: $primaryFont;
 
     select {
+        font-family: $primaryFont;
+        font-weight: 300;
+        font-size: 15px;
         appearance: none;
         background-color: transparent;
         border: 1px solid $fadeColor;
         width: 200px;
+        height: 30px;
         padding: 0 1em;
         margin-left: 20px;
+        position: relative;
+        cursor: pointer;
+        z-index: 1;
     }
+
+    option {
+        width: 50%;
+        background-color: transparent;
+    }
+    
+    img {
+        position: absolute;
+        top: 5px;
+        right: 72%;
+        cursor: pointer;
+        width: 45px;
+        z-index: 0;
+    }
+
 }
+
 
 

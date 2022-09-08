@@ -1,6 +1,11 @@
 import React from "react";
 
-function AddressFormSection() {
+function AddressFormSection({
+  address,
+  contact,
+  handleAddressChange,
+  handleContactChange,
+}) {
   return (
     <div className="app__formAddress">
       <form action="" className="app__formAddress-form">
@@ -8,7 +13,12 @@ function AddressFormSection() {
           <h2 className="app__formAddress-subheading">Adres odbioru:</h2>
           <div className="app__formAddress-form-address_element">
             <label htmlFor="street">Ulica</label>
-            <input type="text" id="street" />
+            <input
+              type="text"
+              id="street"
+              value={address.street}
+              onChange={handleAddressChange}
+            />
           </div>
           <div className="app__formAddress-form-address_element">
             <label htmlFor="city">Miasto</label>

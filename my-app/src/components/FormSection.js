@@ -8,6 +8,61 @@ import SummaryFormSection from "./SummaryFormSection";
 
 function FormSection() {
   const [step, setStep] = useState(0);
+  const [item, setItem] = useState("");
+  const [bags, setBags] = useState("");
+  const [location, setLocation] = useState("");
+  const [people, setPeople] = useState([]);
+  const [organization, setOrganization] = useState("");
+  const [address, setAddress] = useState({
+    street: "",
+    city: "",
+    postCode: "",
+    number: "",
+  });
+  const [contact, setContact] = useState({
+    date: "",
+    hour: "",
+    info: "",
+  });
+
+  const handleItemChange = (e) => {
+    setItem(e.target.value);
+  };
+  const handleBagsChange = (e) => {
+    setBags(e.target.value);
+  };
+
+  const handleLocationChange = (e) => {
+    setLocation(e.target.value);
+  };
+
+  const handlePeopleChange = (e) => {
+    setPeople((prevState) => [e.target.value, ...prevState]);
+  };
+
+  const handleOrganizationChange = (e) => {
+    setOrganization(e.target.value);
+  };
+
+  const handleAddressChange = (e) => {
+    const { name, value } = e.target;
+    setAddress((prevState) => {
+      return {
+        ...prevState,
+        [name]: value,
+      };
+    });
+  };
+
+  const handleContactChange = (e) => {
+    const { name, value } = e.target;
+    setContact((prevState) => {
+      return {
+        ...prevState,
+        [name]: value,
+      };
+    });
+  };
 
   const StepHeadings = [
     "Zaznacz co chcesz oddać:",
@@ -26,15 +81,45 @@ function FormSection() {
 
   const PageDisplay = () => {
     if (step === 0) {
-      return <ItemsFormSection />;
+      return (
+        <ItemsFormSection item={item} handleItemChange={handleItemChange} />
+      );
     } else if (step === 1) {
-      return <BagsFormSection />;
+      return (
+        <BagsFormSection bags={bags} handleBagsChange={handleBagsChange} />
+      );
     } else if (step === 2) {
-      return <LocationFormSection />;
+      return (
+        <LocationFormSection
+          handleLocationChange={handleLocationChange}
+          location={location}
+          handlePeopleChange={handlePeopleChange}
+          people={people}
+          organization={organization}
+          handleOrganizationChange={handleOrganizationChange}
+        />
+      );
     } else if (step === 3) {
-      return <AddressFormSection />;
+      return (
+        <AddressFormSection
+          address={address}
+          handleAddressChange={handleAddressChange}
+          contact={contact}
+          handleContactChange={handleContactChange}
+        />
+      );
     } else if (step === 4) {
-      return <SummaryFormSection />;
+      return (
+        <SummaryFormSection
+          item={item}
+          bags={bags}
+          location={location}
+          people={people}
+          organization={organization}
+          address={address}
+          contact={contact}
+        />
+      );
     }
   };
 
