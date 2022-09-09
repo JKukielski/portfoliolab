@@ -1,7 +1,7 @@
 import React from "react";
 import "../scss/itemsFormSection.scss";
 
-function ItemsFormSection({ item, setItem, handleItemChange }) {
+function ItemsFormSection({ error, handleItemChange, handleForwardClick }) {
   return (
     <div className="app__formItems">
       <form className="app__formItems-form">
@@ -61,6 +61,12 @@ function ItemsFormSection({ item, setItem, handleItemChange }) {
           <span className="checkmark"></span>
         </label>
       </form>
+      <div className="app__form-buttons_container">
+        <button onClick={handleForwardClick} className="app__form-btn">
+          Dalej
+        </button>
+      </div>
+      <p>{error}</p>
     </div>
   );
 }

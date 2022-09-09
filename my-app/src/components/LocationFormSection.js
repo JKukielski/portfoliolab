@@ -7,6 +7,8 @@ function LocationFormSection({
   handlePeopleChange,
   handleOrganizationChange,
   organization,
+  handleBackClick,
+  handleForwardClick,
 }) {
   return (
     <div className="app__formLocation">
@@ -91,6 +93,15 @@ function LocationFormSection({
           onChange={handleOrganizationChange}
         />
       </form>
+      <div className="app__form-buttons_container">
+        <button onClick={handleBackClick} className="app__form-btn">
+          Wstecz
+        </button>
+
+        <button onClick={handleForwardClick} className="app__form-btn">
+          Dalej
+        </button>
+      </div>
     </div>
   );
 }

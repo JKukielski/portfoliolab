@@ -1,0 +1,36 @@
+@import './settings/colors';
+@import './settings/fonts';
+
+.app__formAddress-form {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+
+}
+
+.app__formAddress-form-address_element, .app__formAddress-form-date_element {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.app__formAddress-form_content-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+input {
+    background-color: transparent;
+    border: 1px solid $fadeColor;
+    height: 25px;
+}
+
+textarea {
+        background-color: transparent;
+        resize: none;
+        outline: none;
+        border: 1px solid $fadeColor;
+}

@@ -5,9 +5,14 @@ import BagsFormSection from "./BagsFormSection";
 import LocationFormSection from "./LocationFormSection";
 import AddressFormSection from "./AddressFormSection";
 import SummaryFormSection from "./SummaryFormSection";
+import { useNavigate } from "react-router-dom";
+import ThankYouSection from "./ThankYouSection";
 
 function FormSection() {
+  const navigate = useNavigate();
+
   const [step, setStep] = useState(0);
+  const [error, setError] = useState("");
   const [item, setItem] = useState("");
   const [bags, setBags] = useState("");
   const [location, setLocation] = useState("");
@@ -64,6 +69,14 @@ function FormSection() {
     });
   };
 
+  const handleForwardClick = () => {
+    setStep((prevState) => prevState + 1);
+  };
+
+  const handleBackClick = () => {
+    setStep((prevState) => prevState - 1);
+  };
+
   const StepHeadings = [
     "Zaznacz co chcesz oddać:",
     "Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:",
@@ -82,11 +95,22 @@ function FormSection() {
   const PageDisplay = () => {
     if (step === 0) {
       return (
-        <ItemsFormSection item={item} handleItemChange={handleItemChange} />
+        <ItemsFormSection
+          item={item}
+          handleForwardClick={handleForwardClick}
+          handleItemChange={handleItemChange}
+          error={error}
+        />
       );
     } else if (step === 1) {
       return (
-        <BagsFormSection bags={bags} handleBagsChange={handleBagsChange} />
+        <BagsFormSection
+          bags={bags}
+          handleForwardClick={handleForwardClick}
+          handleBagsChange={handleBagsChange}
+          handleBackClick={handleBackClick}
+          error={error}
+        />
       );
     } else if (step === 2) {
       return (
@@ -97,6 +121,8 @@ function FormSection() {
           people={people}
           organization={organization}
           handleOrganizationChange={handleOrganizationChange}
+          handleForwardClick={handleForwardClick}
+          handleBackClick={handleBackClick}
         />
       );
     } else if (step === 3) {
@@ -106,6 +132,8 @@ function FormSection() {
           handleAddressChange={handleAddressChange}
           contact={contact}
           handleContactChange={handleContactChange}
+          handleForwardClick={handleForwardClick}
+          handleBackClick={handleBackClick}
         />
       );
     } else if (step === 4) {
@@ -118,8 +146,11 @@ function FormSection() {
           organization={organization}
           address={address}
           contact={contact}
+          handleForwardClick={handleForwardClick}
         />
       );
+    } else if (step === 5) {
+      return <ThankYouSection />;
     }
   };
 
@@ -145,7 +176,11 @@ function FormSection() {
               </h1>
             </div>
             <div className="app__form-inputs_container">{PageDisplay()}</div>
-            <div className="app__form-buttons_container">
+
+            {/* <div
+              className="app__form-buttons_container"
+              style={{ bottom: step === 4 && "0" }}
+            >
               {step > 0 && (
                 <button
                   onClick={() => {
@@ -157,21 +192,16 @@ function FormSection() {
                 </button>
               )}
               {step < 4 && (
-                <button
-                  onClick={() => {
-                    setStep((prevState) => prevState + 1);
-                  }}
-                  className="app__form-btn"
-                >
+                <button onClick={handleForwardClick} className="app__form-btn">
                   Dalej
                 </button>
               )}
               {step === 4 && (
-                <button onClick={() => {}} className="btn-confirm">
+                <button onClick={handleForwardClick} className="btn-confirm">
                   Potwierdzam
                 </button>
               )}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

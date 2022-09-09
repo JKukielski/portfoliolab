@@ -1,0 +1,18 @@
+@import './settings/colors';
+@import './settings/fonts';
+
+.app__thanks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+    margin-top: 180px;
+
+    .app__thanks-heading {
+        font-family: $primaryFont;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+}

@@ -2,7 +2,12 @@ import React from "react";
 import "../scss/bagsFormSection.scss";
 import images from "../constants/images.js";
 
-function BagsFormSection({ handleBagsChange }) {
+function BagsFormSection({
+  handleBagsChange,
+  handleForwardClick,
+  handleBackClick,
+  error,
+}) {
   return (
     <div className="app__formBags">
       <form className="app__formBags-form">
@@ -17,6 +22,16 @@ function BagsFormSection({ handleBagsChange }) {
         </select>
         <img src={images.ArrowDown} alt="arrowdown" />
       </form>
+      <div className="app__form-buttons_container">
+        <button onClick={handleBackClick} className="app__form-btn">
+          Wstecz
+        </button>
+
+        <button onClick={handleForwardClick} className="app__form-btn">
+          Dalej
+        </button>
+      </div>
+      <p>{error}</p>
     </div>
   );
 }
